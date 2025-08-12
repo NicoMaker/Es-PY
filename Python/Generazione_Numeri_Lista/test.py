@@ -3,7 +3,7 @@ def somma_numeri_inferiori(lista, number):
     s = [x for x in lista if x < number]
     return sum(s)
 
-with open("lista.json", "r") as file:
+with open("../JSON/lista.json", "r") as file:
     import json
     data = json.load(file)
     lista = data["numbers"]

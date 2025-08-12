@@ -20,5 +20,5 @@ data = {
 print(f"Numeri da 1 a {max_number}, limits: {limits}")
 
 # Scrivi su file come JSON formattato
-with open("lista.json", "w") as file:
+with open("../JSON/lista.json", "w") as file:
     json.dump(data, file, indent=2)
