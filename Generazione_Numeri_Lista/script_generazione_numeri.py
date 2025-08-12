@@ -4,7 +4,7 @@ import json
 
 # Percorso cartella e file
 folder_path = "../JSON"
-file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../JSON/numbers.json")
+file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "JSON/numbers.json")
 
 # Crea la cartella se non esiste
 os.makedirs(folder_path, exist_ok=True)

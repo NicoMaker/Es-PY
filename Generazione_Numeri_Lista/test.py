@@ -1,7 +1,7 @@
 import os
 
 folder_path = "../JSON"
-file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../JSON/numbers.json")
+file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "JSON/numbers.json")
 
 def somma_numeri_inferiori(lista, number):
     somma = 0
