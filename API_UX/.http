@@ -1,0 +1,55 @@
+### 1 - Home
+GET http://127.0.0.1:5000/
+
+### 2 - Crea utente (CREATE)
+POST http://127.0.0.1:5000/users
+Content-Type: application/json
+
+{
+  "username": "Mario",
+  "email": "mario@example.com",
+  "password": "password123"
+}
+
+### 3 - Crea utente con dati mancanti (errore 400)
+POST http://127.0.0.1:5000/users
+Content-Type: application/json
+
+{
+  "username": "Luca"
+}
+
+### 4 - Lista utenti (READ tutti)
+GET http://127.0.0.1:5000/users
+
+### 5 - Dettaglio utente appena creato (READ singolo)
+GET http://127.0.0.1:5000/users/1
+
+### 6 - Dettaglio utente inesistente (errore 404)
+GET http://127.0.0.1:5000/users/500
+
+### 7 - Aggiorna utente esistente (UPDATE)
+PUT http://127.0.0.1:5000/users/1
+Content-Type: application/json
+
+{
+  "username": "Mario Rossi",
+  "email": "mariorossi@example.com",
+  "password": "nuovapassword"
+}
+
+### 8 - Aggiorna utente inesistente (errore 404)
+PUT http://127.0.0.1:5000/users/999
+Content-Type: application/json
+
+{
+  "username": "Finto",
+  "email": "finto@example.com",
+  "password": "fakepass"
+}
+
+### 9 - Elimina utente esistente (DELETE)
+DELETE http://127.0.0.1:5000/users/1
+
+### 10 - Elimina utente inesistente (errore 404)
+DELETE http://127.0.0.1:5000/users/999
