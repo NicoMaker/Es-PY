@@ -1,5 +1,6 @@
 import os
 import sqlite3
+import json
 from flask import Blueprint, request, jsonify
 
 crud_blueprint = Blueprint("crud", __name__)
@@ -65,7 +66,12 @@ def get_users():
     conn = get_db_connection()
     users = conn.execute("SELECT * FROM users").fetchall()
     conn.close()
-    return jsonify([dict(row) for row in users])
+
+    #Usa un template HTML e passa i dati dove serve per visualizzare l'html
+    return f"<p>{users[0]['email']}</p>"
+
+    #jsonify ritorna un oggetto di tipo Responce
+    # return jsonify([dict(row) for row in users])
 
 # READ (singolo)
 @crud_blueprint.route("/users/<int:user_id>", methods=["GET"])
@@ -75,8 +81,8 @@ def get_user(user_id):
     conn.close()
 
     if user is None:
-        return jsonify({"error": "Utente non trovato"}), 404
-
+        return jsonify({"error": "Utente non trovato"}), 404   
+    
     return jsonify(dict(user))
 
 # UPDATE
